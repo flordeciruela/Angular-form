@@ -1,0 +1,9 @@
+section {
+  margin-top:  70px;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+}

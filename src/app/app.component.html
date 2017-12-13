@@ -1,6 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<form [formGroup]="form">
-  <input type="text" formControlName="name">
-</form>
 
-<p>{{form.get('name').value}}</p>
+<section>
+  <h1>{{title}}</h1>
+  <form [formGroup]="form">
+    <input #newString type="text" formControlName="name" (keyup.enter)="addString(newString.value)"
+      (blur)="addString(newString.value); newString.value='' ">
+    <button (click)="addString(newString.value)">Agregar</button>
+  </form>
+
+  <p *ngFor="let text of arr">{{text}}</p>
+</section>
