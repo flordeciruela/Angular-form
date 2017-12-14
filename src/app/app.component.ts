@@ -8,11 +8,11 @@ import data from './app.data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Cadaver Exquisito';
+  title = 'Bienvenido al famoso juego literario del cadáver exquisito';
   form: FormGroup;
   fb: FormBuilder;
   arr = data;
-
+  gameOver = false;
   constructor(fb: FormBuilder) {
     this.fb = fb;
   }
@@ -21,12 +21,18 @@ export class AppComponent implements OnInit {
     if (newString) {
       this.arr.push(newString);
     }
+    console.log(this.arr);
   }
 
   ngOnInit(){
     this.form = this.fb.group({
       name: ['']
     })
+
+    setTimeout(() => {
+      this.gameOver = true;
+      console.log("Game Over");
+    }, 5000);
   }
 
 }
