@@ -2,10 +2,10 @@
 <section>
   <h1>{{title}}</h1>
   <p>Se trata de crear un texto surrealista donde cada uno añade algunas lí­neas al final sin conocer todo el texto anterior.</p>
-  <p>Para añadir tu colaboración debes escribir un comentario.</p>
-  <p>El juego finaliza en: 00:00:05 y podrás ver el resultado aquí.</p>
+  <p>Para añadir tu colaboración debes escribir un comentario (Máximo 300 caracteres).</p>
+  <p>El juego finaliza el: {{dateString}} el formulario cerrará y podrás ver el resultado.</p>
   <form [formGroup]="form" *ngIf="!gameOver">
-    <textarea #newString rows="6" cols="60" placeholder="Exprésate..." maxlength="10" formControlName="name" (keyup.enter)="addString(newString.value); newString.value=''"
+    <textarea #newString rows="6" cols="60" placeholder="Exprésate..." maxlength="300" formControlName="name" (keyup.enter)="addString(newString.value); newString.value=''"
       (blur)="addString(newString.value); newString.value='' " required></textarea>
     <input type="submit" (click)="addString(newString.value)" value="Agregar">
   </form>

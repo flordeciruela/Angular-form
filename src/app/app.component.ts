@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   fb: FormBuilder;
   arr = data;
   gameOver = false;
+  timeForDeadline = 1*60*1000;
+  dateDeadLine = new Date((new Date()).valueOf() + this.timeForDeadline)
+  dateString = new Intl.DateTimeFormat().format(this.dateDeadLine) + ' a las ' + this.dateDeadLine.toLocaleTimeString();
+
   constructor(fb: FormBuilder) {
     this.fb = fb;
   }
@@ -32,7 +36,9 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.gameOver = true;
       console.log("Game Over");
-    }, 5000);
+      console.log(this.dateDeadLine);
+      console.log(this.dateString);
+    }, this.timeForDeadline);
   }
 
 }
