@@ -2,10 +2,9 @@
 <section>
   <h1>{{title}}</h1>
   <form [formGroup]="form">
-    <input #newString type="text" formControlName="name" (keyup.enter)="addString(newString.value)"
-      (blur)="addString(newString.value); newString.value='' ">
-    <button (click)="addString(newString.value)">Agregar</button>
+    <textarea #newString rows="6" cols="60" placeholder="Algunas palabras..." maxlength="10" formControlName="name" (keyup.enter)="addString(newString.value); newString.value=''"
+      (blur)="addString(newString.value); newString.value='' " required></textarea>
+    <input type="submit" (click)="addString(newString.value)" value="Agregar">
   </form>
-
   <p *ngFor="let text of arr">{{text}}</p>
 </section>

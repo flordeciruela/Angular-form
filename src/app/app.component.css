@@ -3,7 +3,7 @@ section {
   text-align: center;
 }
 
-button {
+input {
   display: block;
   margin: 10px auto;
 }
