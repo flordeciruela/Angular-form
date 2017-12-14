@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
     if (newString) {
       this.arr.push(newString);
     }
-    console.log(this.arr);
   }
 
   ngOnInit(){
@@ -35,9 +34,6 @@ export class AppComponent implements OnInit {
 
     setTimeout(() => {
       this.gameOver = true;
-      console.log("Game Over");
-      console.log(this.dateDeadLine);
-      console.log(this.dateString);
     }, this.timeForDeadline);
   }
 
