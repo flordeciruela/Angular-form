@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   fb: FormBuilder;
   arr = data;
   gameOver = false;
-  timeForDeadline = 1*60*1000;
+  timeForDeadline = 8000;//1*60*1000;
   dateDeadLine = new Date((new Date()).valueOf() + this.timeForDeadline)
   dateString = new Intl.DateTimeFormat().format(this.dateDeadLine) + ' a las ' + this.dateDeadLine.toLocaleTimeString();
 
@@ -27,9 +27,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.form = this.fb.group({
-      name: ['']
+      sentence: ['']
     })
 
     setTimeout(() => {

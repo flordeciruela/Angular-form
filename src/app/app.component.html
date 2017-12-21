@@ -5,9 +5,8 @@
   <p>Para añadir tu colaboración debes escribir un comentario (Máximo 300 caracteres).</p>
   <p>El juego finaliza el: {{dateString}} el formulario cerrará y podrás ver el resultado.</p>
   <form [formGroup]="form" *ngIf="!gameOver">
-    <textarea #newString rows="6" cols="60" placeholder="Exprésate..." maxlength="300" formControlName="name" (keyup.enter)="addString(newString.value); newString.value=''"
-      (blur)="addString(newString.value); newString.value='' " required></textarea>
-    <input type="submit" (click)="addString(newString.value)" value="Agregar">
+    <textarea #newString rows="6" cols="60" placeholder="Exprésate..." maxlength="300" formControlSentence="sentence" required></textarea>
+    <input type="submit" (click)="addString(newString.value); newString.value='' " value="Agregar">
   </form>
   <div id="gameResult" *ngIf="gameOver">
     <p *ngFor="let text of arr">{{text}}</p>
