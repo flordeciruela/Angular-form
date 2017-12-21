@@ -8,12 +8,12 @@ import data from './app.data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Bienvenido al famoso juego literario del cadáver exquisito';
+  title = 'Bienvenido al famoso juego literario del Cadáver exquisito';
   form: FormGroup;
   fb: FormBuilder;
   arr = data;
   gameOver = false;
-  timeForDeadline = 8000;//1*60*1000;
+  timeForDeadline = 1*60*1000;
   dateDeadLine = new Date((new Date()).valueOf() + this.timeForDeadline)
   dateString = new Intl.DateTimeFormat().format(this.dateDeadLine) + ' a las ' + this.dateDeadLine.toLocaleTimeString();
 
