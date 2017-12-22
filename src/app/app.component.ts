@@ -8,6 +8,7 @@ import data from './app.data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  /*
   title = 'Bienvenido al famoso juego literario del Cadáver exquisito';
   form: FormGroup;
   fb: FormBuilder;
@@ -36,5 +37,14 @@ export class AppComponent implements OnInit {
       this.gameOver = true;
     }, this.timeForDeadline);
   }
+  */
+  activeUrl;
+  constructor(private service: GithubService,
+              private route: ActivateRoute) {
 
+              }
+
+  ngOnInit() {
+    
+  }
 }
