@@ -1,6 +1,9 @@
-# Form
+# Bienvenido al famoso juego literario del Cadáver exquisito
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+Juego desarrollado como proyecto para el curso de angular fundamentals.
+El juego es abierto al público en general, cada uno podrá añadir una frase anónima con las cuales se formará un poema surrealista, el texto completo se publicará en la misma página el diá XX/XX/XX (por motivos de prueba y revisión del profesor se utilizó un setTimeOut para que el juego terminara algunos min después de haber cargado la página), al llegar al deadline no se podrán añadir nuevas colaboraciones y el juego habrá terminado.
+
+*This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
 ## Development server
 
