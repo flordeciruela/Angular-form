@@ -1,0 +1,7 @@
+<form [formGroup]="form" *ngIf="!gameOver" (ngSubmit)="onSubmit()">
+  <textarea rows="6" cols="60"
+            placeholder="Exprésate..."
+            maxlength="300"
+            formControlName="newString"></textarea>
+  <input type="submit" value="Agregar">
+</form>

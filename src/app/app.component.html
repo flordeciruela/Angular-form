@@ -7,14 +7,9 @@
   </p>
   <p>Para añadir tu colaboración debes escribir un comentario (Máximo 300 caracteres).</p>
   <p>El juego finaliza el: {{dateString}} el formulario cerrará y podrás ver el resultado.</p>
-  <form [formGroup]="form" *ngIf="!gameOver" (ngSubmit)="onSubmit()">
-    <textarea rows="6" cols="60"
-              placeholder="Exprésate..."
-              maxlength="300"
-              formControlName="newString"></textarea>
-    <input type="submit" value="Agregar">
-  </form>
-  <div id="gameResult" *ngIf="gameOver">
-    <p *ngFor="let text of arr">{{text}}</p>
-  </div>
+  <nav>
+    <a routerLink="/result" routerLinkActive="active">Ver resultado</a>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+  </nav>
+  <router-outlet></router-outlet>
 </section>
