@@ -12,4 +12,9 @@
     <a routerLink="/home" routerLinkActive="active">Home</a>
   </nav>
   <router-outlet></router-outlet>
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}
+    </li>
+  </ul>
 </section>

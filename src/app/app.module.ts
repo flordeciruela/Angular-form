@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { TextsComponent } from './texts/texts.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'home', component: FormComponent },
@@ -25,7 +28,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
