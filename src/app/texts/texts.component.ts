@@ -11,7 +11,7 @@ export class TextsComponent implements OnInit {
 
   texts = data;
   gameOver = false;
-  timer = AppComponent.timeForDeadline;
+  //timer = AppComponent.timeForDeadline;
 
   constructor() { }
 
