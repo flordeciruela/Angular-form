@@ -12,6 +12,7 @@ export class FormComponent implements OnInit {
   form: FormGroup;
   fb: FormBuilder;
   arr = data;
+  play = false;
 
   constructor(fb: FormBuilder) {
     this.fb = fb;
@@ -20,6 +21,7 @@ export class FormComponent implements OnInit {
   onSubmit() {
     this.arr.push(this.form.get('newString').value);
     this.form.reset();
+    this.play = true;
   }
 
   ngOnInit() {

@@ -3,30 +3,84 @@
   font-family: 'Roboto', sans-serif;
 }
 
-section {
-  margin-top:  80px;
+body {
+  background-color: #000000;
+  color: #FFFFFF;
   text-align: center;
 }
 
+nav {
+  margin: 30px auto;
+}
+
+nav img {
+  width: 100px;
+}
+
 h1 {
-  font-size: 40px;
+  font-size: 35px;
+}
+
+form {
+  margin-top: 30px;
 }
 
 textarea {
+  background-color: #86008F;
+  border: 3px solid  #8FC04B;
   display: block;
   border-radius: 10px;
-  font-size: 18px;
+  color: #FFFFFF;
+  font-size: 24px;
   margin: 10px auto;
   padding: 10px;
 }
 
 input[type="submit"] {
+  background-color: #FFFFFF;
   border: none;
   border-radius: 10px;
-  font-size: 18px;
+  color: #000000;
+  font-size: 20px;
+  margin: 10px auto;
   padding: 10px 15px;
+  cursor: pointer;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+textarea::placeholder {
+  color: #FFFFFF;
 }
 
 #gameResult {
-  margin: 50px auto;
+  background-color: #86008F;
+  border: 3px solid  #8FC04B;
+  border-radius: 10px;
+  font-size: 19px;
+  height: auto;
+  margin: 20px auto;
+  overflow: auto;
+  padding: 1rem 2rem;
+  width: 42%;
+}
+
+a[routerLink="/result"] {
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+
+input[type="submit"]:hover,
+a[routerLink="/result"]:hover {
+  background-color: #98C94D;
+  font-size: 21px;
 }

@@ -1,7 +1,16 @@
-<form [formGroup]="form" *ngIf="!gameOver" (ngSubmit)="onSubmit()">
-  <textarea rows="6" cols="60"
+<main>
+  <h1>Bienvenid@ al famoso juego literario del Cadáver exquisito</h1>
+  <h2>
+    Se trata de crear un texto surrealista donde cada uno añade algunas lí­neas al final
+    sin conocer todo el texto anterior.
+  </h2>
+  <h2>Para añadir tu colaboración debes escribir un comentario (Máximo 60 caracteres).</h2>
+</main>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <textarea rows="3" cols="35"
             placeholder="Exprésate..."
-            maxlength="300"
+            maxlength="60"
             formControlName="newString"></textarea>
-  <input type="submit" value="Agregar">
+  <input type="submit" value="Agregar" *ngIf="!play">
 </form>
+<a routerLink="/result" routerLinkActive="active" *ngIf="play">Ver resultado</a>
