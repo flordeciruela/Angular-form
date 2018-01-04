@@ -1,16 +1,14 @@
-<main>
-  <h1>Bienvenid@ al famoso juego literario del Cadáver exquisito</h1>
-  <h2>
-    Se trata de crear un texto surrealista donde cada uno añade algunas lí­neas al final
-    sin conocer todo el texto anterior.
-  </h2>
-  <h2>Para añadir tu colaboración debes escribir un comentario (Máximo 60 caracteres).</h2>
+<section *ngIf="!gameOver">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <textarea rows="3" cols="35"
+              placeholder="Exprésate..."
+              maxlength="60"
+              formControlName="newString"></textarea>
+    <input type="submit" value="Agregar" [disabled]="form.get('newString').hasError('required')">
+  </form>
+</section>
+
+<main *ngIf="gameOver">
+  <h2>Game over</h2>
+  <a routerLink="/result" routerLinkActive="active">Ver resultado</a>
 </main>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <textarea rows="3" cols="35"
-            placeholder="Exprésate..."
-            maxlength="60"
-            formControlName="newString"></textarea>
-  <input type="submit" value="Agregar" *ngIf="!play" [disabled]="form.get('newString').hasError('required')">
-</form>
-<a routerLink="/result" routerLinkActive="active" *ngIf="play">Ver resultado</a>

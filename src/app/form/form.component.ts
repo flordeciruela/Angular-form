@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
   form: FormGroup;
   fb: FormBuilder;
   arr = data;
-  play = false;
+  gameOver = false;
 
   private static CustomValidator(control: AbstractControl) {
     return control.value ? null : { newValidator: false};
@@ -24,8 +24,13 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     this.arr.push(this.form.get('newString').value);
-    this.form.reset();
-    this.play = true;
+    //this.form.reset();
+    this.form.get('newString').value = '';
+    console.log(this.arr.length);
+    if(this.arr.length > 11) {
+      this.gameOver = true;
+    }
+    console.log(this.gameOver);
   }
 
   ngOnInit() {
