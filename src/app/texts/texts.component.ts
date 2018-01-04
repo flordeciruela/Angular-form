@@ -10,12 +10,10 @@ import { AppComponent } from '../app.component';
 export class TextsComponent implements OnInit {
 
   texts = data;
-  gameOver = false;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.texts);
   }
 
 }
