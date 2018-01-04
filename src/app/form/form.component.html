@@ -11,6 +11,6 @@
             placeholder="Exprésate..."
             maxlength="60"
             formControlName="newString"></textarea>
-  <input type="submit" value="Agregar" *ngIf="!play">
+  <input type="submit" value="Agregar" *ngIf="!play" [disabled]="form.get('newString').hasError('required')">
 </form>
 <a routerLink="/result" routerLinkActive="active" *ngIf="play">Ver resultado</a>

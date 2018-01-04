@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import data from '../app.data';
 
 @Component({
@@ -14,6 +14,10 @@ export class FormComponent implements OnInit {
   arr = data;
   play = false;
 
+  private static CustomValidator(control: AbstractControl) {
+    return control.value ? null : { newValidator: false};
+  }
+
   constructor(fb: FormBuilder) {
     this.fb = fb;
   }
@@ -26,7 +30,10 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      newString: ['', [Validators.required]]
+      newString: ['',  [
+        Validators.required,
+        FormComponent.CustomValidator
+      ]]
     })
   }
 

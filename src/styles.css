@@ -64,7 +64,7 @@ textarea::placeholder {
   margin: 20px auto;
   overflow: auto;
   padding: 1rem 2rem;
-  width: 42%;
+  width: 44%;
 }
 
 a[routerLink="/result"] {
