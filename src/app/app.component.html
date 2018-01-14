@@ -4,4 +4,12 @@
     <img src="http://moziru.com/images/frankenstein-clipart-2.png" alt="Icon home">
   </a>
 </nav>
+
+<textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
+<input type="submit" value="Add a Post" (click)="addPost()">
+<p *ngFor="let item of items | async">
+  <span class="text text-white" style="display:unset">
+    {{item.text}}
+  </span>
+</p>
 <router-outlet></router-outlet>
